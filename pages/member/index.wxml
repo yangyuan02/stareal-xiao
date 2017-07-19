@@ -1,0 +1,75 @@
+<view class="experience">
+  <view class="bgbar">
+    <view class="upbar" style="background:{{colors[member.level-1]}};width:{{progress+'%'}}"></view>
+    <image src="{{icon[member.level-1]}}" style="left:{{progress}}"></image>
+  </view>
+  <view class="upgrade">
+    <text>还差{{member.up_value}}经验升级</text>
+  </view>
+</view>
+<view class="privilege" wx:if="{{member.level==1}}"><!--普通会员-->
+  <view class="title">我的特权（普通会员）</view>
+  <view class="coupon clear">
+    <view class="icon_word">
+    <image src="/images/vip_ordinary_coupon@2x.png"></image>
+    <view class="word">每月20元优惠劵</view>
+    </view>
+    <view class="btn" style="background:{{Btn.Color}}" bindtap="getCoupon">{{Btn.Text}}</view>
+  </view>
+</view>
+
+<view class="upprivilege" wx:if="{{member.level==1||member.level==2}}"><!--白银会员-->
+  <view class="title" wx:if="{{member.level==2}}">我的特权（白银会员）</view>
+  <view class="title" wx:if="{{member.level==1}}">升级后可享白银会员特权</view>
+  <view class="upprivilegelist clear">
+    <image src="/images/vip_silver_coupon@2x.png"></image>
+    <view class="word">每月30元优惠劵</view>
+    <view class="btn" wx:if="{{member.level==2}}" style="background:{{Btn.Color}}" bindtap="getCoupon">{{Btn.Text}}</view>
+  </view>
+  <view class="upprivilegelist clear">
+    <image src="/images/vip_silver_mail@2x.png"></image>
+    <view class="word">满1000元包邮</view>
+  </view>
+</view>
+
+<view class="upprivilege" wx:if="{{member.level==2||member.level==3}}"> <!--黄金会员-->
+  <view class="title" wx:if="{{member.level==3}}">我的特权（黄金会员）</view>
+  <view class="title" wx:if="{{member.level==2}}">升级后可享黄金会员特权</view>
+  <view class="upprivilegelist clear">
+    <image src="/images/vip_gold_coupon@2x.png"></image>
+    <view class="word">每月50元优惠劵</view>
+    <view class="btn" wx:if="{{member.level==3}}" style="background:{{Btn.Color}}" bindtap="getCoupon">{{Btn.Text}}</view>
+  </view>
+  <view class="upprivilegelist clear">
+    <image src="/images/vip_gold_mail@2x.png"></image>
+    <view class="word">满500元包邮</view>
+  </view>
+</view>
+
+<view class="upprivilege" wx:if="{{member.level==3||member.level==4}}">  <!--铂金会员-->
+  <view class="title" wx:if="{{member.level==4}}">我的特权（铂金会员）</view>
+  <view class="title" wx:if="{{member.level==3}}">升级后可享铂金会员特权</view>
+  <view class="upprivilegelist clear">
+    <image src="/images/vip_platinum_coupon@2x.png"></image>
+    <view class="word">每月80元优惠劵</view>
+    <view class="btn" wx:if="{{member.level==4}}" style="background:{{Btn.Color}}" bindtap="getCoupon">{{Btn.Text}}</view>
+  </view>
+  <view class="upprivilegelist clear">
+    <image src="/images/vip_platinum_mail@2x.png"></image>
+    <view class="word">满300元包邮</view>
+  </view>
+</view>
+
+<view class="upprivilege" wx:if="{{member.level==4||member.level==5}}">  <!--钻石会员-->
+  <view class="title" wx:if="{{member.level==5}}">我的特权（钻石会员）</view>
+  <view class="title" wx:if="{{member.level==4}}">升级后可享钻石会员特权</view>
+  <view class="upprivilegelist clear">
+    <image src="/images/vip_diamond_coupon@2x.png"></image>
+    <view class="word">每月100元优惠劵</view>
+    <view class="btn" wx:if="{{member.level==5}}" style="background:{{Btn.Color}}" bindtap="getCoupon">{{Btn.Text}}</view>
+  </view>
+  <view class="upprivilegelist clear">
+    <image src="/images/vip_diamond_mail@2x.png"></image>
+    <view class="word">满0元包邮</view>
+  </view>
+</view>

@@ -1,0 +1,229 @@
+page{
+  background-color: #F1F1F1;
+}
+.all{
+  padding-bottom: 100rpx;
+}
+/*选择日期*/
+.scroll-view_H{
+    white-space:nowrap;
+    width: 100%;
+    background-color:#FFF;
+}
+.nav-name{
+    display:inline-block;
+    margin:32rpx 10rpx;
+    font-size:24rpx;
+    color: #6B6B6B;
+    border: 2rpx solid #E5E5E5;
+    border-radius: 8rpx;
+    padding:8rpx 32rpx;
+}
+.month{
+  text-align: center;
+}
+.nav-hover{
+    color: #FF5000;
+    border: 2rpx solid #FF5000;
+}
+/*票面价格*/
+.mid{
+  background: #FFF;
+  padding: 20rpx;
+  margin-top: 12rpx;
+}
+.title{
+  font-size: 28rpx;
+}
+.mid:last-child{
+  margin-top: 20rpx;
+}
+.price{
+  float: left;
+  font-size: 24rpx;
+  color: #6B6B6B;
+  padding: 20rpx;
+  border: 2rpx solid #E5E5E5;
+  border-radius: 8rpx;
+  margin-right: 30rpx;
+  margin-top: 20rpx;
+}
+.hover{
+  color: #FF5000;
+  border: 2rpx solid #FF5000;
+}
+.seat .disabled{
+  background:#ccc;
+  border:none;
+  color:#6B6B6B
+}
+.price:last-child{
+  margin-right: 0;
+}
+/*主容器*/ 
+.bg{
+  background: #FFF;
+  margin-top: 12rpx;
+  padding: 20rpx;
+  position: relative
+} 
+.num{
+  position: absolute;
+  left: 20rpx;
+  top: 30rpx;
+  font-size: 28rpx;
+}
+.stepper {  
+    width: 80px;  
+    height: 26px;  
+    /*给主容器设一个边框*/  
+    border: 1px solid #ccc;  
+    border-radius: 3px;  
+    margin:0 auto;  
+}  
+  
+/*加号和减号*/  
+.stepper text {  
+    width: 19px;  
+    line-height: 26px;  
+    text-align: center;  
+    float: left;  
+}  
+  
+/*数值*/  
+.stepper input {  
+    width: 40px;  
+    height: 26px;  
+    float: left;  
+    margin: 0 auto;  
+    text-align: center;  
+    font-size: 12px;  
+    /*给中间的input设置左右边框即可*/  
+    border-left: 1px solid #ccc;  
+    border-right: 1px solid #ccc;  
+}  
+  
+/*普通样式*/  
+.stepper .normal{  
+    color: black;  
+}  
+  
+/*禁用样式*/  
+.stepper .disabled{  
+    color: #ccc;  
+}  
+/*支付栏*/
+.paybar{
+  background: #FFF;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20rpx 0;
+  z-index: 9;
+}
+.paymoney{
+  float: left;
+  text-align: center;
+  width: 70%;
+  font-size: 32rpx;
+  color: #FF5000;
+  height: 54rpx;
+  line-height: 54rpx;
+}
+.paybar .btn{
+  float: right;
+  font-size: 32rpx;
+  background: #FF5000;
+  color: #FFF;
+  padding: 6rpx 18rpx;
+  border-radius: 8rpx;
+  margin-right: 60rpx;
+}
+.paynum{
+  display: inline-block;
+}
+/*到货提醒弹窗*/
+.popup{
+  background: #fff;
+  width:100%;
+  position:fixed;
+  left:0;
+  bottom:-552rpx;
+  z-index:11
+}
+.topblock{
+  padding: 20rpx 24rpx;
+}
+.topblock image{
+  width: 30rpx;
+  height: 30rpx;
+  float: right;
+}
+.topblock .headline{
+  font-size: 32rpx;
+  text-align: center;
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
+}
+.topblock .subtitle{
+  margin-top: 20rpx;
+}
+.topblock .subtitle .icon{
+  width: 8rpx;
+  height: 30rpx;
+  background: #FF5000;
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+  border-bottom-left-radius: 30%;
+  border-bottom-right-radius: 30%;
+  float: left;
+  margin-top: 5rpx;
+}
+.topblock .subtitle text{
+  font-size: 28rpx;
+  float: left;
+  margin-left: 20rpx;
+}
+.topblock .date{
+  font-size: 28rpx;
+  margin-left: 26rpx;
+  margin-top: 20rpx;
+}
+.popup .tip{
+  font-size: 24rpx;
+  margin: 0 24rpx;
+  padding: 32rpx 0;
+  border-top: 2rpx solid #D8D8D8;
+}
+.popup .submit{
+  font-size: 32rpx;
+  padding: 20rpx 24rpx;
+  border-top: 2rpx solid #D8D8D8;
+}
+.popup .submit text{
+  float: left;
+  height: 58rpx;
+  line-height: 58rpx;
+}
+.popup .submit input{
+  width:380rpx;
+  float:left;
+}
+.popup .submit .btn{
+  padding: 8rpx 52rpx;
+  background: #FF5000;
+  color: #fff;
+  border-radius: 8rpx;
+  float: right;
+}
+/*蒙版*/
+.mask{
+  position:fixed;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:rgba(0, 0, 0, 0.4);
+  z-index:10;
+  display:none;
+}

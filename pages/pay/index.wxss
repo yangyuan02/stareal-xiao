@@ -1,0 +1,171 @@
+page{
+  background-color: #F1F1F1;
+}
+.all{
+  padding-bottom: 100rpx;
+}
+.information{
+  font-size: 24rpx;
+  background: #FFF;
+  padding: 0 24rpx;
+}
+.detail{
+  border-bottom: 2rpx solid #E5E5E5;
+   padding: 24rpx 0;
+}
+.detail image{
+  width: 128rpx;
+  height: 180rpx;
+  border-radius: 6rpx;
+  float: left;
+}
+.pricenum{
+  float: right;
+}
+.mid{
+  width: 408rpx;
+  float: left;
+  margin-left: 16rpx;
+}
+.mid .name{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+}
+.time{
+  margin-top: 35rpx;
+}
+.address{
+  margin-top: 15rpx;
+}
+.num{
+  text-align: right;
+}
+.seat{
+  text-align: right;
+  padding: 20rpx 0;
+}
+.outline{
+    border-bottom: 2rpx solid #E5E5E5;
+}
+.method{
+  font-size: 24rpx;
+  width: 320rpx;
+  margin: auto;
+  padding: 20rpx;
+  color: #6B6B6B;
+}
+.method image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.express{
+  float: left;
+}
+.actived{
+  color: #000;
+}
+.scene{
+  float: right;
+}
+.shippingmethod{
+  background: #FFF;
+  margin-top: 12rpx;
+}
+.useraddress{
+  font-size: 24rpx;
+  padding: 20rpx;
+  position: relative;
+}
+.username{
+  float: left;
+}
+.phone{
+  float: left;
+  margin-left: 60rpx;
+}
+.chooseaddress{
+  margin-top: 20rpx;
+}
+.useraddress image{
+  width: 14rpx;
+  height: 24rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 40rpx;
+}
+.coupon{
+  font-size: 28rpx;
+  position: relative;
+  background: #FFF;
+  padding: 20rpx;
+  margin-top: 12rpx;
+}
+.word{
+  float: left;
+  height: 46.25rpx;
+  line-height: 46.25rpx;
+}
+.input{
+  float: right;
+  margin-right: 20rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+}
+.coupon image{
+  width: 14rpx;
+  height: 24rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 35rpx;
+}
+.calculatedprice{
+  background: #FFF;
+  margin-top: 12rpx;
+  padding: 20rpx;
+  font-size: 24rpx;
+}
+.each{
+  margin-top: 20rpx;
+}
+.each:first-child{
+  margin-top: 0;
+}
+.each .name{
+  float: left;
+}
+.each .price{
+  float: right;
+}
+/*支付栏*/
+.paybar{
+  background: #FFF;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20rpx 0;
+  z-index: 9;
+}
+.paymoney{
+  float: left;
+  text-align: center;
+  width: 70%;
+  font-size: 32rpx;
+  color: #FF5000;
+  height: 54rpx;
+  line-height: 54rpx;
+}
+.btn{
+  float: right;
+  font-size: 32rpx;
+  background: #FF5000;
+  color: #FFF;
+  padding: 6rpx 18rpx;
+  border-radius: 8rpx;
+  margin-right: 60rpx;
+}
+.paynum{
+  display: inline-block;
+}

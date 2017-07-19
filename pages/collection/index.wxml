@@ -1,0 +1,10 @@
+<import src="../../common/template.wxml" />
+<!--引入模板-->
+<!--列表部分-->
+<scroll-view scroll-y="true" bindscrolltolower="bindDownLoad" style="height:{{scrollHeight}}px" enable-back-to-top="true">
+  <template is="list" data="{{hotLIst}}" />
+</scroll-view>
+<!--loading-->
+<template is="loading" data="{{hidden}}" />
+<!--暂无内容-->
+<template is="nodata" data="{{...nodata}}" />

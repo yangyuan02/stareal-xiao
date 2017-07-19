@@ -1,0 +1,31 @@
+<view class="content">
+  <view class="content-box">
+    <view class="input-personal">
+      <view>
+        姓名：
+      </view>
+      <input type="text" bindblur="bindblurname" placeholder="请输入姓名" value="{{username}}"/>
+    </view>
+    <view class="input-personal">
+      <view>
+        手机：
+      </view>
+      <input type="text" bindblur="bindblurphone" placeholder="手机号" value="{{iphone}}" />
+    </view>
+   
+     <view class="city">
+      <view class="city-name">地址：</view>
+      <view class="city-lists">
+      <import src="../../../common/address-temp.wxml"/>
+      <template is="addressPicker" data="{{provinceIndex:city.provinceIndex,cityIndex:city.cityIndex,districtIndex:city.districtIndex,province:city.province,city:city.city[city.selectedProvince],district:city.district[city.selectedCity]}}"/>
+      </view> 
+    </view>
+    <view class="info">
+      <view>详细：</view>
+      <input class="textareamore" bindblur="particularFn" placeholder="详细地址（如门牌号等）"  value="{{address}}"/>
+    </view>
+  </view>
+  <view class="btn-address" >
+    <button type="primary" bindtap="save">确定</button>
+  </view>
+</view>

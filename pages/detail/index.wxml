@@ -1,0 +1,113 @@
+<import src="../../utils/wxParse.wxml" />
+<!--引入模板-->
+<import src="../../common/template.wxml" />
+<!--引入模板-->
+<view class="all">
+  <view class="bg clear">
+    <view>
+      <image src="{{good.thumb}}"></image>
+      <view class="information">
+        <view class="detail_title">{{good.title}}</view>
+        <view class="bottomhalf clear">
+          <view class="sell">
+            <view class="price_seat clear">
+              <view class="price">
+                <text>{{good.price}}</text>
+                <text>元起</text>
+              </view>
+              <image src="/images/Group 9@2x.png" bindtap="seatThumb"></image>
+            </view>
+            <view class="sellnum">已售出{{good.sold}}张</view>
+          </view>
+          <view class="score" wx:if="{{good.star}}">
+            <text>{{star[0]}}.</text>
+            <text>{{star[1]}}分</text>
+          </view>
+          <view class="score" wx:if="{{!good.star}}">
+            <text>暂无评分</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="date clear">
+      <image src="/images/show details_time@2x.png"></image>
+      <text>{{good.date}}</text>
+    </view>
+    <view class="address">
+      <view class="place">
+        <image src="/images/show details_location@2x.png"></image>
+        <text>{{good.site_title}}</text>
+      </view>
+      <view class="street">{{good.address}}</view>
+    </view>
+  </view>
+  <!-- 巡演信息 -->
+  <view class="tourlist" wx:if="{{tour.length!=0}}">
+    <view class="title">巡演信息</view>
+    <view class="tour-scroll">
+      <scroll-view class="scroll-view_H" scroll-x="{{true}}" style="width: 100%">
+        <block wx:for="{{tour}}" wx:key="id">
+          <view class="place_time {{id==item.good_id?'active':''}}" bindtap="switchTour" data-id="{{item.good_id}}">
+            <view class="place">{{item.title}}</view>
+            <view class="time">{{item.date}}</view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  <!-- 巡演信息 -->
+  <!-- 演出简介 -->
+  <view class="summary">
+    <view class="title">演出详情</view>
+    <view class="content">
+      <text>{{good.introduction?good.introduction:'暂无简介'}}</text>
+    </view>
+    <view class="btn" wx:if="good.introduction.length>1" bindtap="goDetail">查看全部</view>
+  </view>
+  <!-- 演出简介 -->
+  <!-- 购票须知 -->
+  <view class="ticketnotes">
+    <view class="title">购票须知</view>
+    <view class="content">
+      <text>{{good.notice}}</text>
+    </view>
+  </view>
+  <!-- 购票须知 -->
+  <view class="tel">客服电话：400-879-8613</view>
+  <!-- 购票按钮栏 -->
+  <view class="bottombar clear">
+    <view class="btns clear">
+      <!-- <view class="btn">
+      <image src="/images/show details_tab_comments@2x.png"></image>
+      <view>评论</view>
+    </view> -->
+      <view class="btn" bindtap="favor">
+        <image src="{{favor}}"></image>
+        <view>收藏</view>
+      </view>
+    </view>
+    <view class="buybtn" bindtap="goTicket">{{btn}}</view>
+  </view>
+</view>
+<!-- 购票按钮栏 -->
+<!--loading-->
+<template is="loading" data="{{hidden}}" />
+<!--预约登记弹窗-->
+<view class="popup" animation="{{animation}}">
+  <view class="topblock clear">
+    <image src="/images/classify_off@2x.png" bindtap="closeAnimation"></image>
+    <view class="headline">预约登记</view>
+    <view class="subtitle clear">
+      <view class="icon"></view>
+      <text>时间</text>
+    </view>
+    <view class="date">{{good.date}}</view>
+  </view>
+  <view class="tip">提示：本票品为预约状态，我们将纪录您的信息，在有票时通知您</view>
+  <view class="submit clear">
+    <text>手机号：</text>
+    <input placeholder="请输入手机号" value="{{tel}}" bindinput="listenInput" />
+    <view class="btn" bindtap="appointment">提交</view>
+  </view>
+</view>
+<view class="mask" style="display:{{display}}" bindtap="closeAnimation"></view>

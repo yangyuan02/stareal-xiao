@@ -1,0 +1,148 @@
+page{
+  background-color: #F1F1F1;
+}
+.all{
+  padding-bottom: 100rpx;
+}
+.information{
+  font-size: 24rpx;
+  background: #FFF;
+  padding: 0 24rpx;
+}
+.number-state{
+  padding-top: 32rpx;
+}
+.number-state .number{
+  float: left;
+}
+.number-state .state{
+  float: right;
+  color: #FF5000
+}
+.detail{
+  border-bottom: 2rpx solid #E5E5E5;
+   padding: 24rpx 0;
+}
+.detail image{
+  width: 128rpx;
+  height: 180rpx;
+  border-radius: 6rpx;
+  float: left;
+}
+.pricenum{
+  float: right;
+}
+.mid{
+  width: 408rpx;
+  float: left;
+  margin-left: 16rpx;
+}
+.name{
+  height: 64rpx;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
+}
+.time{
+  margin-top: 35rpx;
+}
+.address{
+  margin-top: 15rpx;
+}
+.num{
+  text-align: right;
+}
+.seat{
+  text-align: right;
+  padding: 20rpx 0;
+}
+.shippingmethod{
+  background: #FFF;
+  margin-top: 12rpx;
+}
+.method{
+  padding: 24rpx 24rpx 0 24rpx;
+}
+.method image{
+  width: 48rpx;
+  height: 48rpx;
+  float: left;
+}
+.method .word{
+  float: left;
+  font-size: 28rpx;
+  margin-left: 28rpx;
+  margin-top: 8rpx;
+}
+.useraddress{
+  font-size: 24rpx;
+  padding: 24rpx;
+  position: relative;
+}
+.username{
+  float: left;
+}
+.phone{
+  float: left;
+  margin-left: 60rpx;
+}
+.chooseaddress{
+  margin-top: 20rpx;
+}
+.calculatedprice{
+  background: #FFF;
+  margin-top: 12rpx;
+  padding: 24rpx;
+  font-size: 24rpx;
+}
+.taketime{
+  margin-top: 20rpx;
+}
+.each{
+  margin-top: 20rpx;
+}
+.each:first-child{
+  margin-top: 0;
+}
+.each .name{
+  float: left;
+}
+.each .price{
+  float: right;
+}
+.payamount{
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}
+.payamount .name{
+  float: left;
+}
+.payamount .price{
+  float: right;
+  color: #FF5000;
+}
+/*支付栏*/
+.paybar{
+  background: #FFF;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 9;
+}
+.paybar .btns{
+    padding: 20rpx;
+}
+.paybar .btn{
+  font-size: 24rpx;
+  float: right;
+  padding: 5rpx 20rpx;
+  border: 2rpx solid #999;
+  border-radius: 8rpx;
+  margin-right: 24rpx;
+}
+.paybar .btn:first-child{
+  border: 2rpx solid #FF5000;
+  color: #FF5000;
+}

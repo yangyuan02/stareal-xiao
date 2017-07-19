@@ -1,0 +1,43 @@
+<import src="../../common/template.wxml" />
+<!--引入模板-->
+<!--导航条-->
+<view class="navbar">
+  <text wx:for="{{navbar}}" id="{{item.kind}}" class="item {{item.kind==currentTab ? 'active' : ''}}" wx:key="id" bindtap="navbarTap">{{item.name}}</text>
+</view>
+<!--全部-->
+<scroll-view scroll-y="true" bindscrolltolower="bindDownLoad" style="height:{{scrollHeight}}px" enable-back-to-top="true">
+  <block wx:for="{{orderList}}" wx:key="{{index}}">
+  <navigator url="../orderdetail/index?id={{item.order_id}}&index={{index}}">
+    <view class="orders-list">
+      <view class="num-pay clear">
+        <view class="num">订单编号：{{item.order_id}}</view>
+        <view class="pay">{{item.new_state=='待付款'?'待支付':item.new_state}}</view>
+      </view>
+      <view class="info clear">
+        <image src="{{item.thumb}}"></image>
+        <view class="mid">
+          <view class="name">{{item.title}}</view>
+          <view class="time">{{item.begindate}}</view>
+          <view class="address">{{item.site_title}}</view>
+        </view>
+        <view class="price-sheet">
+          <view class="price">¥{{item.ori_price}}</view>
+          <view class="sheet">{{item.num}}张</view>
+        </view>
+      </view>
+      <view class="buttons clear">
+        <view class="button" wx:if="{{item.new_state=='待付款'}}" catchtap="cencelOrder" id="{{item.order_id}}" data-index="{{index}}">取消订单</view>
+        <view class="button" wx:if="{{item.new_state=='待付款'}}" id="{{item.order_id}}" data-index="{{index}}" catchtap="pay">立即支付</view>
+        <view class="button" wx:if="{{item.new_state=='已取消'}}" catchtap="delOrder" id="{{item.order_id}}" data-index="{{index}}">删除订单</view>
+        <view class="button" wx:if="{{(item.new_state=='已完成'||item.new_state=='待收货')&&(item.deliver_type!=2)}}" id="{{item.order_id}}" data-index="{{index}}" catchtap="checkExpress">查看物流</view>
+        <view class="button" wx:if="{{item.new_state=='待收货'}}" id="{{item.order_id}}" data-index="{{index}}" catchtap="donelOrder">确认收货</view>
+      </view>
+    </view>
+  </navigator>  
+  </block>
+</scroll-view>
+<!--loading-->
+<template is="loading" data="{{hidden}}" />
+
+<!--暂无内容-->
+<template is="nodata" data="{{...nodata}}" />

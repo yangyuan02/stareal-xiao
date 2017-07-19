@@ -1,0 +1,23 @@
+<import src="../../../common/template.wxml" />
+<!--地址列表-->
+<block wx:for="{{addressList}}" wx:key="{{index}}">
+    <view class="addlist" bindtap="select" data-id="{{item.id}}" data-index="{{index}}">
+      <view class="icon" catchtap="setDefault" id="{{item.id}}" data-index="{{index}}">
+        <image src="{{item.is_default==0?icon1:icon2}}"></image>
+      </view>
+      <view class="person_info clear">
+        <view class="name">{{item.name}}</view>
+        <view class="tel">{{item.mobile}}</view>
+      </view>
+      <view class="add_info">
+        <text>{{item.province}}{{item.city}}{{item.district}}{{item.address}}</text>
+      </view>
+    </view>
+</block>
+<button type="default" size="{{defaultSize}}" hover-class="other-button-hover" bindtap="addAddress">新增地址</button>
+
+<!--loading部分-->
+<template is="loading" data="{{hidden}}" />
+ 
+ <!--暂无内容-->
+<template is="nodata" data="{{...nodata}}" />

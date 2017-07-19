@@ -1,0 +1,107 @@
+/**app.wxss**/
+/*清除浮动全局公共样式*/
+.clear:after {content:"."; display:block; height:0; visibility:hidden; clear:both; }
+page{
+  height: 100%;
+  font-family: 微软雅黑;
+}
+.list{
+  padding:10rpx 24rpx;
+  position: relative;
+  height:254rpx;
+}
+.list > .thumb {
+  width:180rpx;
+  float:left;
+  position: relative
+}
+.list > .thumb text{
+  font-size: 16rpx;
+  position: absolute;
+  top: 18rpx;
+  left: 4rpx;
+  z-index: 1;
+  color: #fff;
+}
+.list > .thumb image:first-child{
+  width:180rpx;
+  height:254rpx;
+}
+.list > .thumb image:last-child{
+  width:64rpx;
+  height:36rpx;
+  position: absolute;
+  left: -4rpx;
+  top: 10rpx;
+}
+.list > .figcaption{
+  width:506rpx;
+  float:right;
+  font-size:28rpx;
+}
+.list > .figcaption .list_title{
+  color:#222;
+  height: 76rpx;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
+}
+.list > .figcaption .list_time{
+  color:#6b6b6b;
+  font-size:24rpx;
+  margin-top:36rpx;
+  margin-bottom:12rpx
+}
+.list > .figcaption .list_address{
+  color:#6b6b6b;
+  font-size:24rpx;
+  margin:12rpx 0;
+}
+.list > .figcaption .list_price{
+  color:#ff5000;
+  font-size:32rpx;
+}
+.list > .figcaption .btn_state{
+  border: 2rpx solid #4899FE;
+  border-radius: 8rpx;
+  padding:12rpx 20rpx;
+  position: absolute;
+  right:24rpx;
+  bottom:24rpx;
+}
+.hot_title{padding-left:24rpx}
+.list > .figcaption .btn_state.yushou{/*预售中*/
+  border-color:#4899FE;
+  color:#4899FE;
+}
+.list > .figcaption .btn_state.shoupiao{/*售票中*/
+  border-color:#FF5000;
+  color:#FF5000;
+}
+.list > .figcaption .btn_state.saopiao{/*扫尾票*/
+  border-color:#FF2450;
+  color:#FF2450;
+}
+.list > .figcaption .btn_state.jijiang{/*即将开票*/
+  border-color:#3D50F0;
+  color:#3D50F0;
+}
+.list > .figcaption .btn_state.jieshu{/*演出结束*/
+  border-color:#6B6B6B;
+  color:#6B6B6B;
+}
+.list > .figcaption .btn_state.shouqin{/*已售罄*/
+  border-color:#6B6B6B;
+  color:#6B6B6B;
+}
+/***************************************************************/
+/*暂无内容*/
+.no_box{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%)
+}
+.no_box .no_tips{text-align:center}

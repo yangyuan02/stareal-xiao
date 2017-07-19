@@ -1,0 +1,82 @@
+<import src="../../common/template.wxml" />
+<view class="all">
+    <view class="information">
+        <view class="number-state clear">
+            <view class="number">订单编号：{{order.order_id}}</view>
+            <view class="state">{{order.new_state=='待付款'?'待支付':order.new_state}}</view>
+        </view>
+        <view class="detail clear">
+            <image src="{{order.thumb}}"></image>
+            <view class="mid">
+                <view class="name">{{order.title}}</view>
+                <view class="time">{{order.begindate}}</view>
+                <view class="address">{{order.site_title}}</view>
+            </view>
+            <view class="pricenum">
+                <view class="price">¥{{order.ori_price}}</view>
+                <view class="num">{{order.num}}张</view>
+            </view>
+        </view>
+        <view class="seat">{{order.area}}</view>
+    </view>
+    <!--快递配送-->
+    <view class="shippingmethod" wx:if="{{order.deliver_type_code==1}}">
+        <view class="method clear">
+            <image src="/images/order_icon_express@2x.png"></image>
+            <view class="word">快递配送</view>
+        </view>
+        <view class="useraddress">
+            <view class="usernamephone clear">
+                <view class="username">收货人：{{order.name}}</view>
+                <view class="phone">{{order.mobile}}</view>
+            </view>
+            <view class="chooseaddress">收货地址：{{order.address}}</view>
+        </view>
+    </view>
+    <!--现场取票-->
+    <view class="shippingmethod" wx:if="{{order.deliver_type_code==2}}">
+        <view class="method clear">
+            <image src="/images/order_icon_scene@2x.png"></image>
+            <view class="word">现场取票</view>
+        </view>
+        <view class="useraddress">
+            <view class="usernamephone clear">
+                <view class="username">取票人：{{order.live_name}}</view>
+                <view class="phone">{{order.live_mobile}}</view>
+            </view>
+            <view class="taketime">取票地址：演出场馆</view>
+            <view class="chooseaddress">取票时间：演出开场前1小时</view>
+        </view>
+    </view>
+    <view class="calculatedprice">
+        <view class="each clear">
+            <view class="name">票价总额</view>
+            <view class="price">¥{{order.price}}</view>
+        </view>
+        <view class="each clear">
+            <view class="name">优惠劵</view>
+            <view class="price">－¥{{order.coupon_price}}</view>
+        </view>
+        <view class="each clear">
+            <view class="name">快递费</view>
+            <view class="price">¥{{order.deliver_fee}}</view>
+        </view>
+        <view class="payamount clear">
+            <view class="name">实付金额</view>
+            <view class="price">¥{{order.total}}</view>
+        </view>
+    </view>
+    <!--支付栏 -->
+      <view class="paybar clear">
+          <view class="btns clear">
+              <view class="btn" wx:if="{{order.new_state=='待付款'}}" bindtap="pay">立即支付</view>
+              <view class="btn" wx:if="{{order.new_state=='待付款'}}" bindtap="cancelOrder">取消订单</view>
+              <view class="btn" wx:if="{{order.new_state=='已取消'}}" bindtap="delOrder">删除订单</view>
+              <view class="btn" wx:if="{{(order.new_state=='已完成'||order.new_state=='待收货')&&(order.deliver_type_code!=2)}}" bindtap="inquiryLogistics">查看物流</view>
+        <view class="btn" wx:if="{{order.new_state=='待收货'}}" bindtap="donelOrder">确认收货</view>
+          </view>
+      </view>
+  </view>
+
+  <!--loading-->
+<template is="loading" data="{{hidden}}" />

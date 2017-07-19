@@ -1,0 +1,80 @@
+<view class="all">
+  <view class="information">
+    <view class="detail clear">
+      <image src="{{good.thumb}}"></image>
+      <view class="mid">
+        <view class="name">{{good.title}}</view>
+        <view class="time">{{ticket.data}}</view>
+        <view class="address">{{good.site_title}}</view>
+      </view>
+      <view class="pricenum">
+        <view class="price">¥{{ticket.cat}}</view>
+        <view class="num">{{ticket.num2}}张</view>
+      </view>
+    </view>
+    <view class="seat">{{ticket.name}}</view>
+  </view>
+  <view class="shippingmethod">
+    <view class="outline">
+      <view class="method clear">
+        <view class="express clear" bindtap="cdDeliverType" data-type="1">
+          <image src="{{param.deliverType==1?'/images/order_express_s@2x.png':'/images/order_express_n@2x.png'}}"></image>
+          <view class="actived">快递配送</view>
+        </view>
+        <view class="scene" bindtap="cdDeliverType" data-type="2">
+          <image src="{{param.deliverType==1?'/images/order_scene_n@2x.png':'/images/order_scene_s@2x.png'}}"></image>
+          <view>现场取票</view>
+        </view>
+      </view>
+    </view>
+    <view class="useraddress" wx:if="{{param.deliverType==1}}">
+      <view class="pay_adddress" wx:if="{{!address.id}}" bindtap="payAddress">
+        <view class="add">新增收货地址</view>
+        <image src="/images/arrow@2x.png"></image>
+      </view>
+      <view class="address_info" wx:if="{{address.id}}" bindtap="payAddress">
+        <view class="usernamephone clear">
+          <view class="username">{{address.name}}</view>
+          <view class="phone">{{address.mobile}}</view>
+        </view>
+        <view class="chooseaddress">{{address.province}}{{address.city}}{{address.district}}{{address.address}}</view>
+        <image src="/images/arrow@2x.png"></image>
+      </view>
+    </view>
+    <view class="userinfo" wx:if="{{param.deliverType==2}}">
+      <view class="coupon clear">
+        <view class="word">取票人姓名</view>
+        <input placeholder="请输入姓名" value="{{param.name}}" bindchange="changeName"/>
+      </view>
+      <view class="coupon clear">
+        <view class="word">取票人手机号</view>
+        <input placeholder="请输入手机号" value="{{param.tel}}" bindchange="changeTel"/>
+      </view>
+    </view>
+  </view>
+  <view class="coupon clear" bindtap="payCoupn">
+    <view class="word">优惠券</view>
+    <!-- <input disabled="true" value="{{csl}}"/> -->
+    <view class="input">{{csl}}</view>
+    <image src="/images/arrow@2x.png"></image>
+  </view>
+  <view class="calculatedprice">
+    <view class="each clear">
+      <view class="name">票价总额</view>
+      <view class="price">¥{{ticket.total}}</view>
+    </view>
+    <view class="each clear">
+      <view class="name">优惠劵</view>
+      <view class="price">－¥{{_price.coupon_value}}</view>
+    </view>
+    <view class="each clear">
+      <view class="name">快递费</view>
+      <view class="price">¥{{_price.express_value}}</view>
+    </view>
+  </view>
+  <!--支付栏 -->
+  <view class="paybar clear">
+    <view class="paymoney">¥{{_price.actually_paid}}({{ticket.num2}}张)</view>
+    <view class="btn" bindtap="pay">立即支付</view>
+  </view>
+</view>

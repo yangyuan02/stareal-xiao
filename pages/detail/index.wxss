@@ -1,0 +1,407 @@
+@import "../../utils/wxParse.wxss";
+
+page {
+  background-color: #f1f1f1;
+}
+
+.all {
+  padding-bottom: 100rpx;
+}
+
+.bg {
+  /*height: 260rpx;*/
+  background-color: #fff;
+  padding: 20rpx;
+  overflow: -Scroll;
+  overflow-y: hidden;
+}
+
+.bg image {
+  width: 180rpx;
+  height: 254rpx;
+  float: left;
+  border-radius: 8rpx;
+}
+
+.bg .information {
+  float: left;
+  width: 500rpx;
+  font-size: 32rpx;
+  padding-left: 20repx;
+  margin-left: 20rpx;
+}
+
+.bg .information .detail_title {
+  height: 84rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.bottomhalf {
+  margin-top: 30rpx;
+  overflow: hidden;
+}
+
+.bottomhalf .sell {
+  float: left;
+}
+
+.bottomhalf .sell .sellnum {
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+
+.bottomhalf .score {
+  float: right;
+  color: #ff5000;
+}
+
+.bottomhalf .score text:first-child {
+  font-size: 48rpx;
+}
+
+.bottomhalf .score text:last-child {
+  font-size: 24rpx;
+}
+
+.bottomhalf .sell .price_seat image {
+  width: 32rpx;
+  height: 32rpx;
+  float: left;
+  margin-left: 20rpx;
+  margin-top: 4rpx;
+}
+
+.price_seat {
+  margin-top: 16rpx;
+  overflow: hidden;
+}
+
+.price_seat .price {
+  float: left;
+}
+
+.price_seat .price text:first-child {
+  color: #ff5000;
+  font-size: 32rpx;
+}
+
+.price_seat .price text:last-child {
+  font-size: 20rpx;
+}
+
+.date {
+  margin-top: 32rpx;
+  overflow: hidden;
+}
+
+.date image {
+  width: 28rpx;
+  height: 28rpx;
+  float: left;
+  margin-top: 3rpx;
+}
+
+.date text {
+  font-size: 24rpx;
+  float: left;
+  margin-left: 12rpx;
+}
+
+.address {
+  margin-top: 20rpx;
+}
+
+.address .place image {
+  width: 28rpx;
+  height: 30rpx;
+  float: left;
+}
+
+.address .place text {
+  float: left;
+  font-size: 24rpx;
+  margin-left: 12rpx;
+}
+
+.address .street {
+  font-size: 20rpx;
+  color: 6B6B6B;
+  padding-left: 38rpx;
+  margin-top: 20rpx;
+}
+
+/* 巡演信息 */
+
+.scroll-view_H {
+  white-space: nowrap;
+  width: 100%;
+}
+
+.tourlist {
+  background: #fff;
+  margin-top: 12rpx;
+  padding: 32rpx 24rpx;
+}
+
+.tour-scroll {
+  margin-top: 20rpx;
+}
+
+.tour-scroll .place_time.active .time {
+  color: #4899fe;
+}
+
+.tour-scroll .place_time.active .place {
+  border-color: #4899fe;
+  color: #4899fe;
+}
+
+.tour-scroll .place_time {
+  display: inline-block;
+  margin-right: 68rpx;
+}
+
+.tour-scroll .place_time:last-child {
+  margin-right: 0;
+}
+
+.tour-scroll .place_time .place {
+  font-size: 28rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border: 2rpx solid #e5e5e5;
+  border-radius: 50%;
+  line-height: 100rpx;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.tour-scroll .place_time .time {
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+
+/**********************状态**************************/
+
+.state.yushou {
+  /*预售中*/
+  border-color: #4899fe;
+  color: #4899fe;
+}
+
+.state.shoupiao {
+  /*售票中*/
+  border-color: #ff5000;
+  color: #ff5000;
+}
+
+.state.saopiao {
+  /*扫尾票*/
+  border-color: #ff2450;
+  color: #ff2450;
+}
+
+.state.jijiang {
+  /*即将开票*/
+  border-color: #3d50f0;
+  color: #3d50f0;
+}
+
+.state.jieshu {
+  /*演出结束*/
+  border-color: #6b6b6b;
+  color: #6b6b6b;
+}
+
+.state.shouqin {
+  /*已售罄*/
+  border-color: #6b6b6b;
+  color: #6b6b6b;
+}
+
+/* 演出简介 */
+
+.summary {
+  background: #fff;
+  padding: 32rpx 24rpx;
+  margin-top: 12rpx;
+}
+
+.title {
+  font-size: 28rpx;
+}
+
+.content {
+  font-size: 28rpx;
+  color: #6b6b6b;
+}
+
+.summary .btn {
+  font-size: 24rpx;
+  color: #4899fe;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+/* 购票须知 */
+
+.ticketnotes {
+  padding: 32rpx 24rpx;
+  background: #fff;
+  margin-top: 12rpx;
+}
+
+.ticketnotes .content {
+  margin-top: 20rpx;
+}
+
+.tel {
+  text-align: center;
+  font-size: 24rpx;
+  padding: 10rpx 0;
+}
+
+/* 购票按钮 */
+
+.bottombar {
+  background: #fff;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  overflow: hidden;
+  border-top: 1rpx solid #e5e5e5;
+}
+
+.bottombar .btns {
+  float: left;
+  overflow: hidden;
+}
+
+.bottombar .btns .btn {
+  float: left;
+  font-size: 20rpx;
+  padding: 10rpx 26rpx;
+  border-right: 2rpx solid #e5e5e5;
+}
+
+.bottombar .btns .btn image {
+  width: 46rpx;
+  height: 42rpx;
+}
+
+.buybtn {
+  font-size: 32rpx;
+  color: #fff;
+  padding: 10rpx 20rpx;
+  background: #ff5000;
+  float: right;
+  border-radius: 8rpx;
+  margin-right: 40rpx;
+  margin-top: 20rpx;
+}
+
+/*预约登记弹窗*/
+
+.popup {
+  background: #fff;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: -456rpx;
+  z-index: 11;
+}
+
+.topblock {
+  padding: 20rpx 24rpx;
+}
+
+.topblock image {
+  width: 30rpx;
+  height: 30rpx;
+  float: right;
+}
+
+.topblock .headline {
+  font-size: 32rpx;
+  text-align: center;
+  margin-top: 40rpx;
+}
+
+.topblock .subtitle {
+  margin-top: 40rpx;
+}
+
+.topblock .subtitle .icon {
+  width: 8rpx;
+  height: 30rpx;
+  background: #ff5000;
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+  border-bottom-left-radius: 30%;
+  border-bottom-right-radius: 30%;
+  float: left;
+  margin-top: 5rpx;
+}
+
+.topblock .subtitle text {
+  font-size: 28rpx;
+  float: left;
+  margin-left: 20rpx;
+}
+
+.topblock .date {
+  font-size: 28rpx;
+  margin-left: 26rpx;
+  margin-top: 20rpx;
+}
+
+.popup .tip {
+  font-size: 24rpx;
+  margin: 0 24rpx;
+  padding: 32rpx 0;
+  border-top: 2rpx solid #d8d8d8;
+}
+
+.popup .submit {
+  font-size: 32rpx;
+  padding: 20rpx 24rpx;
+  border-top: 2rpx solid #d8d8d8;
+}
+
+.popup .submit text {
+  float: left;
+  height: 58rpx;
+  line-height: 58rpx;
+}
+
+.popup .submit input {
+  width: 380rpx;
+  float: left;
+}
+
+.popup .submit .btn {
+  padding: 8rpx 52rpx;
+  background: #ff5000;
+  color: #fff;
+  border-radius: 8rpx;
+  float: right;
+}
+
+/*蒙版*/
+
+.mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  display: none;
+}

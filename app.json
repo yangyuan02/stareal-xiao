@@ -1,0 +1,56 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/list/index",
+    "pages/user/index",
+    "pages/detail/index",
+    "pages/detail/detailx/index",
+    "pages/orders/index",
+    "pages/coupons/index",
+    "pages/ticket/index",
+    "pages/problems/index",
+    "pages/address/list/index",
+    "pages/address/add/index",
+    "pages/pay/index",
+    "pages/orderdetail/index",
+    "pages/logisticsinformation/index",
+    "pages/search/index",
+    "pages/collection/index",
+    "pages/member/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#F5B223",
+    "navigationBarTitleText": "星锐娱乐",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar": {
+    "selectedColor": "#ff5000",
+    "color": "#999",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "images/home_tab_home_n@2x.png",
+      "selectedIconPath": "images/home_tab_home_s@2x.png"
+    },
+    {
+      "pagePath": "pages/list/index",
+      "text": "分类",
+      "iconPath": "images/home_tab_classify_n@2x.png",
+      "selectedIconPath": "images/home_tab_classify_s@2x.png"
+    },
+    {
+      "pagePath": "pages/user/index",
+      "text": "我的",
+      "iconPath": "images/home_tab_my_n@2x.png",
+      "selectedIconPath": "images/home_tab_my_s@2x.png"
+    }]
+  },
+  "debug": true,
+    "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  }
+}

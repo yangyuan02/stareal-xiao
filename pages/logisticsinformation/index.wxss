@@ -1,0 +1,35 @@
+.conpanynum{
+  font-size: 28rpx;
+  padding: 24rpx;
+  border-bottom: 12rpx solid #F1F1F1;
+}
+.num{
+  margin-top: 10rpx;
+}
+.information{
+  padding: 24rpx;
+}
+.news{
+  margin-top: 20rpx;
+}
+.point{
+  width: 14rpx;
+  height: 14rpx;
+  background: #D8D8D8;
+  border-radius: 50%;
+  float: left;
+  margin-top: 10rpx;
+}
+.actived{
+  background: #FF5000;
+}
+.wordstime{
+  width: 664rpx;
+  float: right;
+}
+.words{
+  font-size: 28rpx;
+}
+.time{
+  font-size: 20rpx;
+}

@@ -1,0 +1,39 @@
+.addlist{
+  padding:20rpx 70rpx;
+  position:relative;
+  border-bottom:2rpx solid #F5B223 ;
+}
+.addlist image{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  left:4%;
+  width:40rpx;
+  height:40rpx;
+}
+.person_info{
+  font-size:28rpx;
+  color:#222;
+  margin-bottom:10rpx;
+  margin-left:20rpx;
+}
+.add_info{
+  font-size:24rpx;
+  color:#222;
+   margin-left:20rpx;
+}
+.person_info .name{
+  float:left;
+}
+.person_info .tel{
+  float:right;
+}
+button[type="default"]{
+  background:#F5B223;
+  border-radius:0;
+  color:#fff;
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+}

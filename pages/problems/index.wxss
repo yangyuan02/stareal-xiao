@@ -1,0 +1,16 @@
+.problems_con{
+  padding: 20rpx 60rpx;
+}
+.h1{
+  font-size: 34rpx;
+  text-align: center;
+  margin-top: 40rpx;
+}
+.h2{
+  margin-top: 40rpx;
+  font-size: 28rpx;
+}
+text{
+  margin-top: 20rpx;
+  font-size: 28rpx;
+}

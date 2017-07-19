@@ -1,0 +1,25 @@
+<import src="../../common/template.wxml" />
+<!--引入模板-->
+<!--搜索-->
+<view class="searchbar">
+    <view class="search" bindtap="goSearch">搜索明星、演出、场馆...</view>
+</view>
+<!--首页轮播图-->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+  <block wx:for="{{imgUrls}}" wx:key="id">
+    <swiper-item>
+      <navigator url="../detail/index?id={{item.id}}">
+        <image src="{{item.thumb}}" class="slide-image" width="355" height="217.5" />
+      </navigator>
+    </swiper-item>
+  </block>
+</swiper>
+<!--热门推荐-->
+<view class="hot_title">
+  <view class="icon"></view>
+  <text>热门推荐</text>
+</view>
+<!--列表部分-->
+<template is="list" data="{{hotLIst}}" />
+<!--loading-->
+<template is="loading" data="{{hidden}}" />

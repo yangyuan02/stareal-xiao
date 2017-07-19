@@ -1,0 +1,17 @@
+<import src="../../common/template.wxml" />
+<!--引入模板-->
+<!--分类-->
+<view class="nav-scroll">
+  <scroll-view class="scroll-view_H" scroll-x="false" style="width: 100%">
+    <text wx:for="{{category}}" id="{{item.kind}}" wx:key="id" catchtap="handleTap" class="nav-name {{item.kind == currentId ? 'nav-hover' : ''}}">{{item.name}}</text>
+  </scroll-view>
+</view>
+<!--列表部分-->
+<scroll-view scroll-y="true" bindscrolltolower="bindDownLoad" style="height:{{scrollHeight}}px" enable-back-to-top="true">
+  <template is="list" data="{{hotLIst}}" />
+</scroll-view>
+<!--loading-->
+<template is="loading" data="{{hidden}}" />
+
+<!--暂无内容-->
+<template is="nodata" data="{{...nodata}}" />

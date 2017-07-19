@@ -1,0 +1,22 @@
+<import src="../../common/template.wxml" />
+<view class="conpanynum">
+    <view>快递公司：顺丰速运</view>
+    <view class="num">运单编号：{{invoice}}</view>
+</view>
+<view class="information">
+  <block wx:for="{{express}}" wx:key="{{index}}">
+    <view class="news clear">
+        <view class="point {{index==0?'actived':''}}"></view>
+        <view class="wordstime">
+            <view class="words">{{item.context}}</view>
+            <view class="time">{{item.time}}</view>
+        </view>
+    </view>
+  </block> 
+</view>
+
+<!--loading-->
+<template is="loading" data="{{hidden}}" />
+
+<!--暂无内容-->
+<template is="nodata" data="{{...nodata}}" />

@@ -1,0 +1,35 @@
+<import src="../../common/template.wxml" />
+<!--引入模板-->
+<view class="searchbar clear">
+  <view class="bg1">
+    <input placeholder="搜索明星、演出、场馆..." value="{{value}}" bindinput="listenInput" bindconfirm="confirmSearch" />
+  </view>
+  <view class="btn" bindtap="goBack">取消</view>
+</view>
+<view class="hotsearch" wx-if="{{cdshow}}">
+  <view class="title">热门搜索</view>
+  <view class="hotname clear">
+    <block wx:for="{{hotWord}}" wx:key="id">
+      <view class="name" bindtap="hws" data-word="{{item.word}}">{{item.word}}</view>
+    </block>
+  </view>
+</view>
+<view class="historylist" wx-if="{{cdshow}}">
+  <block wx:for="{{history}}" wx:key="id">
+    <view class="record clear" bindtap="hws" data-word="{{item.word}}">
+      <image src="/images/search_record@2x.png"></image>
+      <text>{{item.word}}</text>
+      <image src="/images/search_off@2x.png" catchtap="delHot" data-index="{{index}}"></image>
+    </view>
+  </block>
+</view>
+
+<!--列表部分-->
+<scroll-view scroll-y="true" bindscrolltolower="bindDownLoad" style="height:{{scrollHeight}}px" enable-back-to-top="true" wx:if="{{!cdshow}}">
+  <template is="list" data="{{hotLIst}}" />
+</scroll-view>
+<!--loading-->
+<template is="loading" data="{{hidden}}" />
+
+<!--暂无内容-->
+<template is="nodata" data="{{...nodata}}" />

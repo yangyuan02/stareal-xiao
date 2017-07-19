@@ -1,0 +1,59 @@
+.searchbar{
+  padding: 16rpx 24rpx;
+  border-bottom: 2rpx solid #E5E5E5;
+}
+.bg1{
+  width: 620rpx;
+  height: 56rpx;
+  background: #F1F1F1;
+  border-radius: 48rpx;
+  float: left;
+}
+.bg1 input{
+  font-size: 25rpx;
+  padding-left: 20rpx
+}
+.btn{
+  float: right;
+  font-size: 28rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+}
+.hotsearch{
+  padding: 24rpx;
+}
+.hotsearch .title{
+  font-size: 24rpx;
+}
+.hotsearch .hotname .name{
+  font-size: 28rpx;
+  float: left;
+  padding: 20rpx 30rpx;
+  border: 2rpx solid #999;
+  border-radius: 200rpx;
+  margin-top: 20rpx;
+  margin-right: 20rpx;
+}
+.historylist{
+  padding: 0 24rpx;
+}
+.historylist .record{
+  padding: 32rpx 0;
+  border-bottom: 2rpx solid #E5E5E5;
+}
+.historylist .record image:first-child{
+  width: 34rpx;
+  height: 34rpx;
+  float: left;
+  margin-top: 10rpx;
+}
+.historylist .record image:last-child{
+  width: 30rpx;
+  height: 30rpx;
+  float: right;
+  margin-top: 10rpx;
+}
+.historylist .record text{
+  font-size: 32rpx;
+  margin-left: 20rpx;
+}

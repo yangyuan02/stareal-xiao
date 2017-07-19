@@ -1,0 +1,65 @@
+<view class="all">
+  <!--选择日期-->
+  <scroll-view class="scroll-view_H" scroll-x="false" style="width:100%">
+    <block wx:for="{{plans}}" wx:key="id">
+      <view class="nav-name {{index==paras.planIndex?'nav-hover':''}}" bindtap="switchPlan" id="{{index}}">
+        <view class="month">{{item.bBuildDate}}</view>
+        <view class="week">{{item.aBuildDate}}</view>
+      </view>
+    </block>
+  </scroll-view>
+  <!--票面价格-->
+  <view class="mid">
+    <view class="title">票面价格</view>
+    <view class="paly clear">
+      <view class="seat clear" wx:for="{{cat}}" wx:key="id" wx:for-item="cat" wx:for-index="catIndex">
+        <view class="price {{gory.status?'':'disabled'}} {{catIndex==paras.catIndex&&goryIndex==paras.goryIndex?'hover':''}}" wx:for="{{cat.children}}" wx:for-item="gory" wx:for-index="goryIndex" bindtap="switchCat" data-cat-index="{{catIndex}}" data-gory-index="{{goryIndex}}" data-gory-status="{{gory.status}}">{{cat.id+gory.name}}</view>
+      </view>
+    </view>
+    <view class="title" style="margin-top: 20rpx;">座位详情</view>
+    <view class="seat clear">
+      <view class="price {{index==paras.pricesIndex?'hover':''}}" wx:for="{{prices}}" data-prices-index="{{index}}" data-prices-status="{{item.status}}" bindtap="switchPrice" wx:if="{{item.num!=0}}">{{item.name}}</view>
+    </view>
+  </view>
+  <!-- 主容器 -->
+  <view class="bg">
+    <view class="num">数量</view>
+    <view class="stepper">
+      <!-- 减号 -->
+      <text class="{{minusStatus}}" bindtap="subNum">-</text>
+      <!-- 数值 -->
+      <input type="number" disabled="true" value="{{num}}" />
+      <!-- 加号 -->
+      <text class="normal" bindtap="addNum">+</text>
+    </view>
+  </view>
+  <!--支付栏 -->
+  <view class="paybar clear">
+    <view class="paymoney">¥{{total}}({{num}}张)</view>
+    <view class="btn" bindtap="goPay">立即支付</view>
+  </view>
+  <!--到货提醒弹窗-->
+<view class="popup" animation="{{animation}}">
+    <view class="topblock clear">
+        <image src="/images/classify_off@2x.png" bindtap="closeAnimation"></image> 
+        <view class="headline">到货提醒</view>
+        <view class="subtitle clear">
+            <view class="icon"></view>
+            <text>时间</text>
+        </view>
+        <view class="date">{{registerData}}</view>
+        <view class="subtitle clear">
+            <view class="icon"></view>
+            <text>票面价格</text>
+        </view>
+        <view class="date">{{registerCat}}元</view>
+    </view>
+    <view class="tip">提示：本票价已售罄，我们将纪录您的信息，在有票时通知您</view>
+    <view class="submit clear">
+        <text>手机号：</text>
+        <input placeholder="请输入手机号" value="{{tel}}" bindinput="listenInput"/>
+        <view class="btn" bindtap="submitOos">提交</view>
+    </view>
+</view>
+</view>
+<view class="mask" style="display:{{display}}" bindtap="closeAnimation"></view>

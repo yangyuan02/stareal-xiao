@@ -1,0 +1,53 @@
+<!--列表部分-->
+<template name="list">
+  <block wx:for="{{hotLIst}}" wx:key="id">
+    <navigator url="../detail/index?id={{item.id}}&index={{index}}">
+    <view class="list clear">
+      <view class="thumb">
+        <image src="{{item.thumb}}"></image>
+        <text>9.5折</text>
+        <image src="/images/Label label@2x.png"></image>
+      </view>
+      <view class="figcaption">
+        <view class="list_title">
+          <text>{{item.title}}</text>
+        </view>
+        <view class="list_time">
+          <text>{{item.date}}</text>
+        </view>
+        <view class="list_address">
+          <text>{{item.site_title}}</text>
+        </view>
+        <view class="list_price">
+          <text>{{item.price}}</text>
+          <text>元起</text>
+        </view>
+        <view class="btn_state {{item.color}}">
+          <text>{{item.state}}</text>
+        </view> 
+      </view>
+    </view>
+    </navigator>
+  </block>
+</template>
+
+<!--loading部分-->
+<template name="loading">
+  <view class="body-view">
+  <loading hidden="{{hidden}}" bindchange="loadingChange">
+    加载中...
+  </loading>
+</view>
+</template>
+
+<!--nodata部分-->
+<template name="nodata">
+  <view class="no_box" wx:if="{{show}}">
+    <view class="bg">
+      <image src="{{icon}}"></image>
+    </view>
+    <view class="no_tips">
+      <text>{{text}}</text>
+    </view>
+  </view>
+</template>

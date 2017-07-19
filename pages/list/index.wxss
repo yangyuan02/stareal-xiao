@@ -1,0 +1,26 @@
+.scroll-view_H{
+    white-space:nowrap;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.nav-name{
+    display:inline-block;
+    margin:0 5px;
+    font-size:16px;
+    color: #2b2e33;
+    border-bottom: 2px solid transparent;
+    padding:10px;
+}
+
+.nav-hover{
+    color: #f06000;
+    border-bottom: 2px solid #f06000;
+}
+
+
+
+
+
+
+
+

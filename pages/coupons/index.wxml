@@ -1,0 +1,33 @@
+<import src="../../common/template.wxml" />
+<!--导航条-->
+<view class="navbar">
+  <text wx:for="{{navbar}}" id="{{item.kind}}" class="item {{item.kind==currentTab ? 'active' : ''}}" wx:key="id" bindtap="navbarTap">{{item.name}}</text>
+</view>
+<scroll-view scroll-y="true" bindscrolltolower="bindDownLoad" style="height:{{scrollHeight}}px" enable-back-to-top="true">
+<block wx:for="{{couponList}}" wx:key="{{index}}">
+  <view class="outmost" bindtap="select" data-id="{{item.id}}" data-ratio="{{item.type=='满减'?item.ratio2+'抵用券':item.ratio1+'折'}}">
+    <view class="stamp {{currentTab==0?'stamp01':'stamp05'}}">
+      <view class="par">
+        <view class="classname clear">
+          <view class="sub sign">{{item.type=='满减'?'￥':'折'}}</view>
+          <view class="span" wx:if="{{item.type=='满减'}}">{{item.ratio2}}</view>
+          <view class="span" wx:if="{{item.type=='折扣'}}">{{item.ratio1}}</view>
+          <view class="sub condition">优惠券</view>
+        </view>
+        <view class="p" wx:if="{{item.type=='满减'}}">订单{{item.remark}}</view>
+        <view class="p" wx:if="{{item.type=='折扣'}}">全场通用</view>
+      </view>
+      <view class="copy">副券
+        <view class="p">{{item.expire_date}}</view>
+      </view>
+      <view class="i"></view>
+    </view>
+  </view>
+</block>
+</scroll-view>
+
+<!--loading部分-->
+<template is="loading" data="{{hidden}}" />
+
+<!--暂无内容-->
+<template is="nodata" data="{{...nodata}}" />

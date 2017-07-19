@@ -1,0 +1,34 @@
+swiper{
+  height:440rpx;
+}
+.slide-image{  
+    width: 100%;  
+}
+.searchbar{
+  padding: 16rpx 24rpx;
+}
+.searchbar .search{
+  height: 56rpx;
+  background: #F1F1F1;
+  border-radius: 48rpx;
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 56rpx;
+}
+.hot_title .icon{
+  width: 8rpx;
+  height: 40rpx;
+  background: #FF5000;
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+  border-bottom-left-radius: 30%;
+  border-bottom-right-radius: 30%;
+  position: absolute;
+  top: 8rpx;
+}
+.hot_title{
+  position: relative;
+}
+.hot_title text{
+  margin-left: 30rpx;
+}
